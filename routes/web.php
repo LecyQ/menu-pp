@@ -16,9 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $category = DB::table('categories')->get();
     $item=DB::table('menuitems')->get();
+    $itemId=1;
 
 
-    return view('test',compact(['category','item']));
+    return view('test',compact(['category','item','itemId']));
+
+});
+Route::get('/test', function () {
+    $category = DB::table('categories')->get();
+    $item=DB::table('menuitems')->get();
+    $itemId=1;
+
+
+    return view('home',compact(['category','item','itemId']));
 
 });
 

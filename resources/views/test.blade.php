@@ -115,13 +115,17 @@
 
 
                             @foreach($item as $key=>$value)
+
+                              @if($value->category=='omelette')
+
                                 <div class="block-content pb-25 mb-25">
-                                   
+
                                     <h2 class="mb-5 ">{{$value->title}}</h2>
                                     <p>{{$value->ingredients}}</p>
                                     <span class="block-price">${{$value->price}}</span>
                                     <span class="dots"></span>
                                 </div>
+                                @endif
                             @endforeach
 
                         </div>
