@@ -89,12 +89,11 @@
             <div class="row">
                 <div class="col-sm-12 ">
                     <!--Tabs-->
-                    <ul class="block-tabs text-center">
-
-                        @foreach($category as $key=>$value)
+                    @foreach($category as $key=>$value)
+                        <ul class="block-tabs text-center">
                             <li class="">{{$value->name}}</li>
-                        @endforeach
-                    </ul>
+                        </ul>
+                    @endforeach
                 </div>
             </div>
             <!--End row-->

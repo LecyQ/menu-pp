@@ -28,7 +28,7 @@ Route::get('/test', function () {
     $itemId=1;
 
 
-    return view('home',compact(['category','item','itemId']));
+    return view('deneme',compact(['category','item','itemId']));
 
 });
 

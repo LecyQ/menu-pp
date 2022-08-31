@@ -116,7 +116,7 @@
 
                             @foreach($item as $key=>$value)
 
-                              @if($value->category=='omelette')
+                              @if($value->category=='omelettes')
 
                                 <div class="block-content pb-25 mb-25">
 
@@ -131,7 +131,7 @@
                         </div>
                         <div class="col-sm-5 text-center ">
                             <div class="block-cat">
-                                <h2 class="mb-30">waffle  </h2>
+                                <h2 class="mb-30">waffle</h2>
                             </div>
                             <div class="block-content  pb-25 mb-25">
                                 <h2 class="mb-5 ">Waffle Brunch </h2>
