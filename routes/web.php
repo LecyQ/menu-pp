@@ -16,19 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $category = DB::table('categories')->get();
     $item=DB::table('menuitems')->get();
+    $uniqueItemCategory = DB::table('menuitems')->get('category')->unique();
     $itemId=1;
+    $uniqueCategory = DB::table('categories')->get('maincategory')->unique();
 
 
-    return view('test',compact(['category','item','itemId']));
+
+
+    return view('test',compact(['category','item','itemId','uniqueCategory','uniqueItemCategory']));
 
 });
 Route::get('/test', function () {
-    $category = DB::table('categories')->get();
+    $category = DB::table('itemcategories')->get();
+    $uniqueCategory = DB::table('itemcategories')->distinct()->get('maincategory');
     $item=DB::table('menuitems')->get();
     $itemId=1;
+    $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
+    $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
 
-
-    return view('deneme',compact(['category','item','itemId']));
+    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
 
 });
 

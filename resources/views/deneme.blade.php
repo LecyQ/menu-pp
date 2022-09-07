@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css -->
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/base.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" type="text/css"  media="all" />
-    <link href="{{asset('css/fonts.css')}}" rel="stylesheet" type="text/css"  media="all" />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
@@ -90,9 +90,8 @@
                 <div class="col-sm-12 ">
                     <!--Tabs-->
                     <ul class="block-tabs text-center">
-
-                        @foreach($category as $key=>$value)
-                            <li class="">{{$value->name}}</li>
+                        @foreach($uniqueCategory as $key=>$value)
+                        <li class="">{{$value->maincategory}}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -106,34 +105,32 @@
             <div class="row">
                 <ul class="block-tab mt-40">
                     <!--Menu list-->
-                    @foreach($category as $key=>$categoryItem)
-                    <li class="active block-list">
+                    @foreach($uniqueCategory as $key=>$uniqueMaincategory)
+                    <li class="block-list">
+                        <!--foreach-->
+                            @foreach($category as $key=>$subCategory)
+                                @if($subCategory->maincategory == $uniqueMaincategory->maincategory)
                         <div class="col-sm-5  col-sm-offset-1 text-center">
                             <div class="block-cat">
-                                <h2 class="mb-30">{{$categoryItem->name}} </h2>
+                                <h2 class="mb-30">{{$subCategory->subcategory}} </h2>
                             </div>
-
-
-
                             @foreach($item as $key=>$value)
-
-                                @if($value->category==$categoryItem->name)
-
-                                    <div class="block-content pb-25 mb-25">
-
-                                        <h2 class="mb-5 ">{{$value->title}}</h2>
-                                        <p>{{$value->ingredients}}</p>
-                                        <span class="block-price">${{$value->price}}</span>
-                                        <span class="dots"></span>
-                                    </div>
+                                @if($subCategory->subcategory == $value->category)
+                            <div class="block-content pb-25 mb-25">
+                                <h2 class="mb-5 ">{{$value->title}} </h2>
+                                <p>{{$value->ingredients}}</p>
+                                <span class="block-price">${{$value->price}}</span>
+                                <span class="dots"></span>
+                            </div>
                                 @endif
                             @endforeach
-
-
                         </div>
+                                @endif
+                            @endforeach
+                            @endforeach
+                            <!--endforeach-->
 
-                    </li>
-                    @endforeach
+
                 </ul>
                 <!--End tabs-->
             </div>
@@ -151,22 +148,22 @@
             <ul class="slides">
                 <li>
                     <div class="background-img zoom">
-                        <img src="img/11.jpg" alt="">
+                        <img src="img/black-rock-sports-pub-by-eskici-merkez-bodrum-5665-5739.jpg" alt="">
                     </div>
                 </li>
                 <li>
                     <div class="background-img zoom">
-                        <img src="img/12.jpg" alt="">
+                        <img src="img/black-rock-sports-pub-by-eskici-merkez-bodrum-5665-5739.jpg" alt="">
                     </div>
                 </li>
                 <li>
                     <div class="background-img zoom">
-                        <img src="img/13.jpg" alt="">
+                        <img src="img/black-rock-sports-pub-by-eskici-merkez-bodrum-5665-5739.jpg" alt="">
                     </div>
                 </li>
                 <li>
                     <div class="background-img zoom">
-                        <img src="img/14.jpg" alt="">
+                        <img src="img/black-rock-sports-pub-by-eskici-merkez-bodrum-5665-5739.jpg" alt="">
                     </div>
                 </li>
             </ul>
@@ -217,12 +214,12 @@
 </div>
 <!-- End wrapper-->
 <!--Javascript-->
-<script src="{{asset('js/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/jquery.flexslider-min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/smooth-scroll.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/jquery.validate.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/placeholders.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+<script src="../js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../js/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="../js/smooth-scroll.js" type="text/javascript"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../js/placeholders.min.js" type="text/javascript"></script>
+<script src="../js/script.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbGQXiGt-6UAmOFFdSzYI-byeE7ewBuVM&callback=initializeMap"></script>
 <!-- Google analytics -->
 <!-- End google analytics -->

@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Css -->
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/base.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/main.css')}}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" type="text/css"  media="all" />
-    <link href="{{asset('css/fonts.css')}}" rel="stylesheet" type="text/css"  media="all" />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
@@ -90,10 +90,10 @@
                 <div class="col-sm-12 ">
                     <!--Tabs-->
                     <ul class="block-tabs text-center">
-
-                       @foreach($category as $key=>$value)
-                           <li class="">{{$value->name}}</li>
-                        @endforeach
+                        <li class="active">Breakfast</li>
+                        <li class="">Lunch</li>
+                        <li class="">Dessert</li>
+                        <li class="">Beverages</li>
                     </ul>
                 </div>
             </div>
@@ -107,31 +107,33 @@
                 <ul class="block-tab mt-40">
                     <!--Menu list-->
                     <li class="active block-list">
+                        <!--foreach-->
                         <div class="col-sm-5  col-sm-offset-1 text-center">
                             <div class="block-cat">
                                 <h2 class="mb-30">omelettes </h2>
                             </div>
-
-
-
-                            @foreach($item as $key=>$value)
-
-                              @if($value->category=='omelettes')
-
-                                <div class="block-content pb-25 mb-25">
-
-                                    <h2 class="mb-5 ">{{$value->title}}</h2>
-                                    <p>{{$value->ingredients}}</p>
-                                    <span class="block-price">${{$value->price}}</span>
-                                    <span class="dots"></span>
-                                </div>
-                                @endif
-                            @endforeach
-
+                            <div class="block-content pb-25 mb-25">
+                                <h2 class="mb-5 ">Tasty Create an Omelette </h2>
+                                <p>Select Any Four of the Following: Bacon, Ham, Sausage, Cheddar.</p>
+                                <span class="block-price">$14</span>
+                                <span class="dots"></span>
+                            </div>
+                            <!--endforeach-->
+                            <div class="block-content  pb-25 mb-25">
+                                <h2 class="mb-5 ">Farmhouse Omelette </h2>
+                                <p>Sauteed Potatoes, Bacon, Grilled Onions, and Melted Cheese Topped.</p>
+                                <span class="block-price ">$14</span>
+                                <span class="dots"></span>
+                            </div>
+                            <div class="block-content">
+                                <h2 class="mb-5 ">Chef's Omelette </h2>
+                                <p>Avocado, Mushrooms, Green Onion, Tomato, Garlic and Shallots.</p>
+                                <span class="block-price ">$14</span>
+                            </div>
                         </div>
                         <div class="col-sm-5 text-center ">
                             <div class="block-cat">
-                                <h2 class="mb-30">waffle</h2>
+                                <h2 class="mb-30">waffle  </h2>
                             </div>
                             <div class="block-content  pb-25 mb-25">
                                 <h2 class="mb-5 ">Waffle Brunch </h2>
@@ -472,12 +474,12 @@
 </div>
 <!-- End wrapper-->
 <!--Javascript-->
-<script src="{{asset('js/jquery-1.12.4.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/jquery.flexslider-min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/smooth-scroll.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/jquery.validate.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/placeholders.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('js/script.js')}}" type="text/javascript"></script>
+<script src="../js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../js/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="../js/smooth-scroll.js" type="text/javascript"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../js/placeholders.min.js" type="text/javascript"></script>
+<script src="../js/script.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbGQXiGt-6UAmOFFdSzYI-byeE7ewBuVM&callback=initializeMap"></script>
 <!-- Google analytics -->
 <!-- End google analytics -->

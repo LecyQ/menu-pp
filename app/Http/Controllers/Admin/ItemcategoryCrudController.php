@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\MenuitemRequest;
+use App\Http\Requests\ItemcategoryRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MenuitemCrudController
+ * Class ItemcategoryCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MenuitemCrudController extends CrudController
+class ItemcategoryCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class MenuitemCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Menuitem::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/menuitem');
-        CRUD::setEntityNameStrings('menuitem', 'menuitems');
+        CRUD::setModel(\App\Models\Itemcategory::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/itemcategory');
+        CRUD::setEntityNameStrings('itemcategory', 'itemcategories');
     }
 
     /**
@@ -40,13 +40,10 @@ class MenuitemCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('id');
-        CRUD::column('title');
-        CRUD::column('ingredients');
-        CRUD::column('price');
-        CRUD::column('category');
+        CRUD::column('subcategory');
+        CRUD::column('maincategory');
         CRUD::column('created_at');
         CRUD::column('updated_at');
-        CRUD::column('maincategory');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -63,12 +60,11 @@ class MenuitemCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(MenuitemRequest::class);
+        CRUD::setValidation(ItemcategoryRequest::class);
 
-        CRUD::field('title');
-        CRUD::field('ingredients');
-        CRUD::field('price');
-        CRUD::field('category');
+
+        CRUD::field('subcategory');
+        CRUD::field('maincategory');
 
 
         /**
