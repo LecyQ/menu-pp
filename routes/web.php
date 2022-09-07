@@ -12,8 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    $category = DB::table('itemcategories')->get();
+    $uniqueCategory = DB::table('itemcategories')->distinct()->get('maincategory');
+    $item=DB::table('menuitems')->get();
+    $itemId=1;
+    $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
+    $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
+
+    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
+
+});
+Route::get('/test', function () {
     $category = DB::table('categories')->get();
     $item=DB::table('menuitems')->get();
     $uniqueItemCategory = DB::table('menuitems')->get('category')->unique();
@@ -26,17 +36,7 @@ Route::get('/', function () {
     return view('test',compact(['category','item','itemId','uniqueCategory','uniqueItemCategory']));
 
 });
-Route::get('/test', function () {
-    $category = DB::table('itemcategories')->get();
-    $uniqueCategory = DB::table('itemcategories')->distinct()->get('maincategory');
-    $item=DB::table('menuitems')->get();
-    $itemId=1;
-    $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
-    $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
 
-    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
-
-});
 
 Auth::routes();
 
