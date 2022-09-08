@@ -20,7 +20,7 @@ Route::get('/', function () {
     $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
     $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
 
-    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
+    return view('home.index',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
 
 });
 Route::get('/test', function () {

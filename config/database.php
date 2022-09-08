@@ -60,7 +60,7 @@ return [
             'engine' => null,
             'sslmode'=>'require',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => '/Users/mertyazici/Desktop/myDb-ca-certificate.crt',
+                PDO::MYSQL_ATTR_SSL_CA => 'C:\Users\mert\Documents\GitHub\menu-pp\config\myDb-ca-certificate.crt',
             ]) : [],
         ],
 
