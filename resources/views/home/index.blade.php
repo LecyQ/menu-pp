@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   >
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/base.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/main.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../css/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
@@ -208,12 +208,12 @@
 
 </div>
 
-<script src="../js/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="../js/jquery.flexslider-min.js" type="text/javascript"></script>
-<script src="../js/smooth-scroll.js" type="text/javascript"></script>
-<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="../js/placeholders.min.js" type="text/javascript"></script>
-<script src="../js/script.js" type="text/javascript"></script>
+<script src="../../js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="../../js/smooth-scroll.js" type="text/javascript"></script>
+<script src="../../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../../js/placeholders.min.js" type="text/javascript"></script>
+<script src="../../js/script.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbGQXiGt-6UAmOFFdSzYI-byeE7ewBuVM&callback=initializeMap"></script>
 
 </body>
