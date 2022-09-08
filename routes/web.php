@@ -19,21 +19,12 @@ Route::get('/', function () {
     $itemId=1;
     $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
     $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
+    $general = DB::table('generals')->where('id',1)->get();
+
 
     return view('home.index',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
 
-});
-Route::get('/test', function () {
-    $category = DB::table('categories')->get();
-    $item=DB::table('menuitems')->get();
-    $uniqueItemCategory = DB::table('menuitems')->get('category')->unique();
-    $itemId=1;
-    $uniqueCategory = DB::table('categories')->get('maincategory')->unique();
 
-
-
-
-    return view('test',compact(['category','item','itemId','uniqueCategory','uniqueItemCategory']));
 
 });
 
