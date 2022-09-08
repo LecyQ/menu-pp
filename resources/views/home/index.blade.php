@@ -8,12 +8,12 @@
     <title>Black Rock QR Menü</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  >
-    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../css/base.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../css/main.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="../../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/base.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
@@ -34,8 +34,6 @@
 <div class="wrapper">
 
     <section class="hero overlay">
-
-
 
         <header class="header default">
             <div class=" left-part">
@@ -64,6 +62,7 @@
             </div>
 
         </div>
+
     </section>
 
     <section id="menu" class="menu pt-120 pb-120 ">
@@ -86,7 +85,7 @@
 
                     <ul class="block-tabs text-center">
                         @foreach($uniqueCategory as $key=>$value)
-                        <li class="{{ $loop->first ?  'active' : '' }}">{{$value->maincategory}}</li>
+                            <li class="{{ $loop->first ?  'active' : '' }}">{{$value->maincategory}}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -100,30 +99,25 @@
                 <ul class="block-tab mt-40">
 
                     @foreach($uniqueCategory as $key=>$uniqueMaincategory)
-
-                    <li class="block-list">
-
-
-                    <li class="block-list {{ $loop->first ?  'active' : '' }}">
-                        <!--foreach-->
+                        <li class="block-list {{ $loop->first ?  'active' : '' }}">
 
                             @foreach($category as $key=>$subCategory)
                                 @if($subCategory->maincategory == $uniqueMaincategory->maincategory)
-                        <div class="col-sm-5  col-sm-offset-1 text-center">
-                            <div class="block-cat">
-                                <h2 class="mb-30">{{$subCategory->subcategory}} </h2>
-                            </div>
-                            @foreach($item as $key=>$value)
-                                @if($subCategory->subcategory == $value->category)
-                            <div class="block-content pb-25 mb-25">
-                                <h2 class="mb-5 ">{{$value->title}} </h2>
-                                <p>{{$value->ingredients}}</p>
-                                <span class="block-price">${{$value->price}}</span>
-                                <span class="dots"></span>
-                            </div>
-                                @endif
-                            @endforeach
-                        </div>
+                                    <div class="col-sm-5  col-sm-offset-1 text-center">
+                                        <div class="block-cat">
+                                            <h2 class="mb-30">{{$subCategory->subcategory}} </h2>
+                                        </div>
+                                        @foreach($item as $key=>$value)
+                                            @if($subCategory->subcategory == $value->category)
+                                                <div class="block-content pb-25 mb-25">
+                                                    <h2 class="mb-5 ">{{$value->title}} </h2>
+                                                    <p>{{$value->ingredients}}</p>
+                                                    <span class="block-price">${{$value->price}}</span>
+                                                    <span class="dots"></span>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 @endif
                             @endforeach
                             @endforeach
@@ -168,7 +162,7 @@
         </div>
 
     </section>
-
+    <
     <section id="contact" class="contact pt-250 pb-250">
 
         <h2 class="indent">Contact</h2>
@@ -197,10 +191,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-5 col-md-offset-7 col-sm-5 col-sm-offset-7">
 
-                </div>
-            </div>
 
         </div>
 
@@ -208,12 +199,12 @@
 
 </div>
 
-<script src="../../js/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="../../js/jquery.flexslider-min.js" type="text/javascript"></script>
-<script src="../../js/smooth-scroll.js" type="text/javascript"></script>
-<script src="../../js/jquery.validate.min.js" type="text/javascript"></script>
-<script src="../../js/placeholders.min.js" type="text/javascript"></script>
-<script src="../../js/script.js" type="text/javascript"></script>
+<script src="../js/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="../js/jquery.flexslider-min.js" type="text/javascript"></script>
+<script src="../js/smooth-scroll.js" type="text/javascript"></script>
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../js/placeholders.min.js" type="text/javascript"></script>
+<script src="../js/script.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbGQXiGt-6UAmOFFdSzYI-byeE7ewBuVM&callback=initializeMap"></script>
 
 </body>
