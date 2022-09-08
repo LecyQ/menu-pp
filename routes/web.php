@@ -22,7 +22,7 @@ Route::get('/', function () {
     $general = DB::table('generals')->where('id',1)->get();
 
 
-    return view('home.index',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
+    return view('home.index',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory','general']));
 
 
 
