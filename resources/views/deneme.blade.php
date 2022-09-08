@@ -76,8 +76,8 @@
             <!--Row-->
             <div class="row">
                 <div class="col-sm-12  mb-100 text-center">
-                    <h1 class="title"> Tasty menu</h1>
-                    <p class="beige">Variety of delicious plate</p>
+                    <h1 class="title">{{$general->first()->maintitle}}</h1>
+                    <p class="beige">{{$general->first()->description}}</p>
                 </div>
             </div>
             <!--End row-->
@@ -91,7 +91,7 @@
                     <!--Tabs-->
                     <ul class="block-tabs text-center">
                         @foreach($uniqueCategory as $key=>$value)
-                        <li class="">{{$value->maincategory}}</li>
+                        <li class="{{ $loop->first ?  'active' : '' }}">{{$value->maincategory}}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -106,7 +106,7 @@
                 <ul class="block-tab mt-40">
                     <!--Menu list-->
                     @foreach($uniqueCategory as $key=>$uniqueMaincategory)
-                    <li class="block-list">
+                    <li class="block-list {{ $loop->first ?  'active' : '' }}">
                         <!--foreach-->
                             @foreach($category as $key=>$subCategory)
                                 @if($subCategory->maincategory == $uniqueMaincategory->maincategory)

@@ -19,8 +19,9 @@ Route::get('/', function () {
     $itemId=1;
     $uniqueItemMaincategory = DB::table('menuitems')->get('maincategory')->unique();
     $uniqueItemSubcategory = DB::table('menuitems')->get('category')->unique();
+    $general = DB::table('generals')->where('id',1)->get();
 
-    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory']));
+    return view('deneme',compact(['category','item','itemId','uniqueCategory','uniqueItemMaincategory','uniqueItemSubcategory','general']));
 
 });
 Route::get('/test', function () {
