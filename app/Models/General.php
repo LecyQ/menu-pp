@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
+use mysql_xdevapi\Collection;
 
 class General extends Model
 {
@@ -14,7 +15,8 @@ class General extends Model
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
-
+    protected $connection='mongodb';
+    protected $collection='Generals';
     protected $table = 'generals';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
